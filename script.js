@@ -17,11 +17,8 @@ async function fetchProfile() {
         updateElement("username", `@${data.login}`);
         updateElement("bio", data.bio || "Desarrollador Full Stack. Entusiasta de los datos y la eficiencia.");
 
-        const avatar = document.getElementById("avatar");
-        if (avatar && data.avatar_url) {
-            avatar.src = data.avatar_url;
-            avatar.classList.remove("skeleton");
-        }
+        // Avatar logic removed to use local GIF
+
 
         // Remove skeleton classes
         document.getElementById("name").classList.remove("skeleton-text");
