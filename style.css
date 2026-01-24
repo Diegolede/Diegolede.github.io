@@ -607,8 +607,7 @@ footer p {
 }
 
 .case-study-content.open {
-    max-height: 5000px;
-    /* Large enough to fit content */
+    /* Max-height is now handled by JS for precise sizing */
     opacity: 1;
     margin-top: 1rem;
     transition: max-height 0.8s ease-in, opacity 0.4s ease-in;
