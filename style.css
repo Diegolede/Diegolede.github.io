@@ -607,7 +607,7 @@ footer p {
 }
 
 .case-study-content.open {
-    max-height: 2500px;
+    max-height: 5000px;
     /* Large enough to fit content */
     opacity: 1;
     margin-top: 1rem;
