@@ -15,10 +15,26 @@ function setupCollapsible() {
             const isActive = toggle.classList.toggle("active");
             content.classList.toggle("open");
 
+            // Set max-height dynamically
+            if (isActive) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
+
             // Optional: Toggle text
             const span = toggle.querySelector("span");
             if (span) {
                 span.textContent = isActive ? "Ocultar detalles" : "Ver detalles del proceso";
+            }
+        });
+
+        // Recalculate height on window resize if open
+        window.addEventListener("resize", () => {
+            if (content.classList.contains("open")) {
+                content.style.maxHeight = "none";
+                content.offsetHeight; // Force reflow
+                content.style.maxHeight = content.scrollHeight + "px";
             }
         });
     }
