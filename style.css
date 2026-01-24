@@ -62,7 +62,8 @@ p {
     color: var(--text-secondary);
     margin-bottom: 1rem;
     line-height: 1.7;
-    /* Better readability */
+    text-align: justify;
+    /* Justify text */
 }
 
 a {
@@ -357,6 +358,8 @@ a:hover {
     color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.5;
+    text-align: justify;
+    /* Justify list text */
 }
 
 .exp-details li::before {
@@ -526,4 +529,122 @@ footer {
     text-align: center;
     font-size: 0.8rem;
     color: #ccc;
+}
+
+footer p {
+    text-align: center;
+    /* Override global justification */
+    margin-bottom: 0;
+}
+
+/* Case Study Section */
+/* Case Study Section */
+.case-study-trigger {
+    display: inline-flex;
+    /* Match .btn */
+    align-items: center;
+    gap: 0.5rem;
+    /* Match .btn */
+    padding: 0.7rem 1rem;
+    /* Match .btn */
+    border-radius: var(--radius);
+    /* Match .btn */
+    font-weight: 500;
+    /* Match .btn */
+    font-size: 0.9rem;
+    /* Match .btn */
+    cursor: pointer;
+    user-select: none;
+    width: fit-content;
+    margin: 1.5rem 0;
+    /* Align left (remove auto), add vertical spacing */
+
+    /* Mix of btn-secondary styles */
+    background-color: white;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    /* Match .btn */
+
+    /* Fix for animation clipping */
+    position: relative;
+    z-index: 5;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.case-study-trigger:hover {
+    background-color: var(--hover-bg);
+    /* Match .btn-secondary:hover */
+    border-color: var(--text-primary);
+    /* Match .btn-secondary:hover */
+    transform: translateY(-1px);
+    /* Match .btn-secondary:hover */
+    box-shadow: none;
+    /* Remove previous strong shadow */
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+    /* Resetted to simpler transition if needed or kept */
+    min-width: 16px;
+    /* Similar to other icons */
+    height: 16px;
+}
+
+.case-study-trigger.active .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.case-study-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out, opacity 0.4s ease-out;
+}
+
+.case-study-content.open {
+    max-height: 2500px;
+    /* Large enough to fit content */
+    opacity: 1;
+    margin-top: 1rem;
+    transition: max-height 0.8s ease-in, opacity 0.4s ease-in;
+}
+
+.case-study-block h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.case-study-block h4 {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.code-block {
+    background-color: var(--hover-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    margin: 1rem 0;
+    color: var(--text-secondary);
+}
+
+.code-block code {
+    white-space: pre;
+}
+
+/* Reuse existing lists or specific overrides if needed */
+.case-study-block .exp-details {
+    margin-top: 0.5rem;
 }
