@@ -3,7 +3,26 @@ const GITHUB_USERNAME = "Diegolede";
 document.addEventListener("DOMContentLoaded", () => {
     fetchProfile();
     fetchRepos();
+    setupCollapsible();
 });
+
+function setupCollapsible() {
+    const toggle = document.getElementById("case-study-toggle");
+    const content = document.getElementById("case-study-content");
+
+    if (toggle && content) {
+        toggle.addEventListener("click", () => {
+            const isActive = toggle.classList.toggle("active");
+            content.classList.toggle("open");
+
+            // Optional: Toggle text
+            const span = toggle.querySelector("span");
+            if (span) {
+                span.textContent = isActive ? "Ocultar detalles" : "Ver detalles del proceso";
+            }
+        });
+    }
+}
 
 // Fetch GitHub Profile Data
 async function fetchProfile() {
