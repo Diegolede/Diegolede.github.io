@@ -6,7 +6,7 @@
     --accent-color: #000000;
     --border-color: #e5e5e5;
     --hover-bg: #f5f5f5;
-    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-main: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
     --spacing-unit: 1rem;
     --spacing-unit: 1rem;
     --max-width: 1100px;
@@ -61,8 +61,6 @@ p {
     color: var(--text-secondary);
     margin-bottom: 1rem;
     line-height: 1.7;
-    text-align: justify;
-    /* Justify text */
 }
 
 a {
@@ -110,7 +108,7 @@ a:hover {
     background: white;
     padding: 2.5rem;
     /* Increased padding for the main profile card */
-    border-radius: var(--radius);
+    border-radius: 10px;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     /* Subtle shadow initially */
@@ -209,7 +207,7 @@ a:hover {
     align-items: center;
     gap: 0.5rem;
     padding: 0.7rem 1rem;
-    border-radius: var(--radius);
+    border-radius: 10px;
     font-weight: 500;
     font-size: 0.9rem;
     cursor: pointer;
@@ -267,7 +265,7 @@ a:hover {
     background: white;
     /* Changed from var(--hover-bg) */
     padding: 2rem;
-    border-radius: var(--radius);
+    border-radius: 10px;
     transition: var(--transition);
     border: 1px solid var(--border-color);
     /* Changed from transparent */
@@ -305,7 +303,7 @@ a:hover {
     background: white;
     /* Changed from var(--hover-bg) */
     padding: 2rem;
-    border-radius: var(--radius);
+    border-radius: 10px;
     transition: var(--transition);
     border: 1px solid var(--border-color);
     /* Changed from transparent */
@@ -357,8 +355,6 @@ a:hover {
     color: var(--text-secondary);
     font-size: 0.9rem;
     line-height: 1.5;
-    text-align: justify;
-    /* Justify list text */
 }
 
 .exp-details li::before {
@@ -397,8 +393,7 @@ a:hover {
     background: white;
     border: 1px solid var(--border-color);
     padding: 0.6rem 1rem;
-    border-radius: var(--radius);
-    /* Updated to use variable */
+    border-radius: 10px;
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--text-secondary);
@@ -456,7 +451,7 @@ a:hover {
 
 .project-card {
     border: 1px solid var(--border-color);
-    border-radius: var(--radius);
+    border-radius: 10px;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -520,14 +515,14 @@ a:hover {
 .project-skeleton {
     height: 150px;
     background-color: var(--hover-bg);
-    border-radius: var(--radius);
+    border-radius: 10px;
 }
 
 /* Footer Card Section */
 .footer-card {
     background: white;
     padding: 0;
-    border-radius: var(--radius);
+    border-radius: 10px;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
@@ -549,10 +544,47 @@ a:hover {
     max-height: 290px;
     height: auto;
     width: auto;
-    border-radius: var(--radius);
+    border-radius: 10px;
     object-fit: cover;
     display: block;
     margin-bottom: -15px;
+}
+
+/* Back to Top Button */
+.back-to-top-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.back-to-top-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: white;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    font-family: var(--font-main);
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+}
+
+.back-to-top-btn svg {
+    transition: transform 0.2s ease;
+}
+
+.back-to-top-btn:hover svg {
+    transform: translateY(-2px);
 }
 
 /* Responsive adjustments for footer card */
@@ -605,7 +637,7 @@ footer p {
     /* Match .btn */
     padding: 0.7rem 1rem;
     /* Match .btn */
-    border-radius: var(--radius);
+    border-radius: 10px;
     /* Match .btn */
     font-weight: 500;
     /* Match .btn */
@@ -688,7 +720,7 @@ footer p {
 .code-block {
     background-color: var(--hover-bg);
     padding: 1.5rem;
-    border-radius: var(--radius);
+    border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.85rem;
     overflow-x: auto;

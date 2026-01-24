@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchProfile();
     fetchRepos();
     setupCollapsible();
+    setupBackToTop();
 });
 
 function setupCollapsible() {
@@ -36,6 +37,19 @@ function setupCollapsible() {
                 content.offsetHeight; // Force reflow
                 content.style.maxHeight = content.scrollHeight + "px";
             }
+        });
+    }
+}
+
+function setupBackToTop() {
+    const backToTopBtn = document.getElementById("back-to-top");
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         });
     }
 }
