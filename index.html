@@ -356,9 +356,20 @@
 
             <div class="case-study-content" id="case-study-content">
                 <div class="case-study-block">
-                    <h3>1. Prompt Inicial (Estructura para IA)</h3>
-                    <p>Para guiar a la inteligencia artificial, creé un prompt estructurado en JSON con especificaciones
-                        técnicas, de contenido y diseño, Ejemplo de .json resumido</p>
+                    <h3>1. Prompt Inicial: La Arquitectura (De 5 Preguntas a 1 JSON)</h3>
+                    <p>Para garantizar un resultado determinista y evitar la "alucinación" de la IA, no pedí código
+                        directamente. Primero, deconstruí el proyecto respondiendo 5 preguntas estratégicas que definen
+                        la arquitectura:</p>
+                    <ul class="exp-details">
+                        <li><strong>¿Qué es? (Scope)</strong> → Portfolio Personal en GitHub Pages.</li>
+                        <li><strong>¿Para qué? (Goal)</strong> → Centralizar mi identidad digital y proyectos.</li>
+                        <li><strong>¿Tecnologías? (Stack)</strong> → HTML5, CSS3, Vanilla JS (Consumo de APIs).</li>
+                        <li><strong>¿Diseño? (Vibe)</strong> → Minimalismo tipográfico, fuente 'Inter', Clean UX.</li>
+                        <li><strong>¿Restricciones? (Constraints)</strong> → Cero Frameworks, carga inmediata, sin
+                            procesos de compilación (No Build).</li>
+                    </ul>
+                    <p>Traduje estas definiciones a un prompt estructurado en JSON (Prompt-as-Code). Este objeto actuó
+                        como el "contrato" técnico para la IA:</p>
                     <pre class="code-block"><code>{
   "project": "GitHub Pages Portfolio",
   "githubUsername": "Diegolede",
@@ -368,21 +379,29 @@
     "layout": "single-page scroll, no navigation menu"
   },
   "sections": {
-    "profileCard": { "dynamic": true, "dataSource": "https://api.github.com/users/Diegolede" },
-    "about": { /* texto personalizado */ },
-    "experience": { /* tarjetas de experiencia */ },
-    "techStack": { /* categorías con iconos en gris */ },
-    "projects": { "dynamic": true, "dataSource": "API de GitHub" }
+    "profileCard": {
+        "dynamic": true,
+        "dataSource": "https://api.github.com/users/Diegolede"
+    },
+    "about": { /* texto personalizado sobre Vibe Coding y eficiencia */ },
+    "experience": { /* tarjetas de experiencia en Fin Studios */ },
+    "techStack": { /* categorías con iconos en escala de grises */ },
+    "projects": {
+        "dynamic": true,
+        "dataSource": "API de GitHub (Repos)"
+    }
   },
   "features": {
     "downloadCvButton": { "fileUrl": "/assets/Diego-Ledesma-cv.pdf" }
   },
   "technicalRequirements": {
     "hosting": "GitHub Pages",
-    "frameworks": "None (vanilla HTML/CSS/JS only)"
+    "frameworks": "None (vanilla HTML/CSS/JS only) - Critical Requirement"
   }
 }</code></pre>
-                    <p>Este prompt fue diseñado para ser preciso, técnico y contextual, para evitar errores.</p>
+                    <p><strong>Resultado:</strong> Este prompt eliminó la ambigüedad. La IA no tuvo que "adivinar" el
+                        estilo ni las herramientas; simplemente ejecutó las instrucciones dentro de los límites de
+                        seguridad que establecí.</p>
                 </div>
 
                 <div class="case-study-block">
