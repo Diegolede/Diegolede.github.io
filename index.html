@@ -331,6 +331,145 @@
             </div>
         </section>
 
+        <!-- Section: Case Study -->
+        <section id="case-study" class="section fade-in">
+            <h2>Caso de Estudio: Creación de mi Portfolio</h2>
+            <p><strong>Objetivo:</strong> Construir un portfolio personal minimalista, funcional y visualmente
+                coherente usando GitHub Pages, que reflejara mi identidad como desarrollador, diseñador UX/UI y
+                analista de datos, integrando dinámicamente mi perfil de GitHub y mis proyectos, sin depender de
+                frameworks complejos.</p>
+
+            <div class="case-study-trigger" id="case-study-toggle">
+                <span>Ver detalles del proceso</span>
+                <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </div>
+
+            <div class="case-study-content" id="case-study-content">
+                <div class="case-study-block">
+                    <h3>1. Prompt Inicial (Estructura para IA)</h3>
+                    <p>Para guiar a la inteligencia artificial, creé un prompt estructurado en JSON con especificaciones
+                        técnicas, de contenido y diseño, Ejemplo de .json resumido</p>
+                    <pre class="code-block"><code>{
+  "project": "GitHub Pages Portfolio",
+  "githubUsername": "Diegolede",
+  "design": {
+    "colorScheme": { "background": "#ffffff" },
+    "typography": { "fontFamily": "Inter" },
+    "layout": "single-page scroll, no navigation menu"
+  },
+  "sections": {
+    "profileCard": { "dynamic": true, "dataSource": "https://api.github.com/users/Diegolede" },
+    "about": { /* texto personalizado */ },
+    "experience": { /* tarjetas de experiencia */ },
+    "techStack": { /* categorías con iconos en gris */ },
+    "projects": { "dynamic": true, "dataSource": "API de GitHub" }
+  },
+  "features": {
+    "downloadCvButton": { "fileUrl": "/assets/Diego-Ledesma-cv.pdf" }
+  },
+  "technicalRequirements": {
+    "hosting": "GitHub Pages",
+    "frameworks": "None (vanilla HTML/CSS/JS only)"
+  }
+}</code></pre>
+                    <p>Este prompt fue diseñado para ser preciso, técnico y contextual, para evitar errores.</p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3>2. Errores de la IA (A pesar de una interpretación correcta)</h3>
+                    <p>La IA entendió bien la lógica del pedido, pero cometió errores típicos de falta de empatía
+                        humana, contexto visual y accesibilidad:</p>
+
+                    <h4>Problemas de UX</h4>
+                    <ul class="exp-details">
+                        <li>El orden de las secciones no seguía un flujo narrativo natural (perfil → quién soy →
+                            experiencia → proyectos).</li>
+                        <li>Los botones (como “Descargar CV”) carecían de funcionalidad, lo que rompía la percepción de
+                            interactividad.</li>
+                        <li>En móviles, la web se desbordaba o se volvía ilegible.</li>
+                    </ul>
+
+                    <h4>Problemas de UI</h4>
+                    <ul class="exp-details">
+                        <li>Los iconos de tecnologías aparecían de color o simplemente no cargaban.</li>
+                        <li>La tipografía Inter no se aplicaba consistentemente en todos los elementos.</li>
+                        <li>El avatar era una imagen estática; perdía la personalidad de mi identidad digital.</li>
+                    </ul>
+
+                    <h4>Falta de refinamiento estético</h4>
+                    <ul class="exp-details">
+                        <li>Espaciado inconsistente entre bloques.</li>
+                        <li>Sin microinteracciones (transiciones suaves, efectos al hacer scroll).</li>
+                        <li>No se consideró la legibilidad en distintos tamaños de pantalla.</li>
+                    </ul>
+                    <p><em>En resumen: la IA entregó funcionalidad, pero no experiencia.</em></p>
+                </div>
+
+                <div class="case-study-block">
+                    <h3>3. Corrección Humana: Arquitectura, Diseño y Código</h3>
+                    <p>Como director de orquesta, tomé el output de la IA y lo transformé en un producto pulido:</p>
+
+                    <h4>Arquitectura y rendimiento</h4>
+                    <ul class="exp-details">
+                        <li>Reorganicé la estructura del HTML para seguir un flujo narrativo claro: Identidad → Valor →
+                            Evidencia (proyectos).</li>
+                        <li>Optimicé las llamadas a la API de GitHub: agregué caché ligero con localStorage para evitar
+                            recargas innecesarias.</li>
+                        <li>Aseguré que todo el sitio cargara en <1s incluso en conexiones lentas (sin librerías
+                                externas innecesarias).</li>
+                    </ul>
+
+                    <h4>Diseño UI/UX</h4>
+                    <ul class="exp-details">
+                        <li>Reemplacé la foto estática por un GIF animado (profile.gif) que refleja mi estilo dinámico y
+                            técnico.</li>
+                        <li>Ajusté el espaciado con un sistema de baseline grid (8px) para coherencia visual.</li>
+                        <li>Aplicé transiciones sutiles en hover/focus para botones y tarjetas.</li>
+                        <li>Aseguré contraste WCAG AA en todos los textos (fondo blanco + texto oscuro con suficiente
+                            tamaño).</li>
+                        <li>Usé Simple Icons en escala de grises manualmente, con fallbacks para tecnologías no
+                            soportadas.</li>
+                    </ul>
+
+                    <h4>Responsive & Accesibilidad</h4>
+                    <ul class="exp-details">
+                        <li>Implementé media queries precisas para móvil, tablet y desktop.</li>
+                        <li>Añadí alt descriptivos, aria-labels y enfoque en navegación por teclado.</li>
+                        <li>El botón de descarga del CV ahora es visible, accesible y funciona en todos los
+                            dispositivos.</li>
+                    </ul>
+
+                    <h4>Toque humano</h4>
+                    <ul class="exp-details">
+                        <li>Eliminé el “ruido” visual: nada distrae del mensaje central.</li>
+                        <li>Cada sección tiene un propósito narrativo: no solo muestra qué hago, sino por qué importa.
+                        </li>
+                        <li>Incluí un detalle personal: “No tengo redes sociales… Si buscas a alguien que pase menos
+                            tiempo en el feed y más en el trabajo, estás en el lugar correcto”.</li>
+                    </ul>
+                </div>
+
+                <div class="case-study-block">
+                    <h3>4. Valor: Más allá del “copiar y pegar”</h3>
+                    <p>Este portfolio no es un output de IA. Es el resultado de:</p>
+                    <ul class="exp-details">
+                        <li><strong>Dirección estratégica:</strong> definir qué mostrar y cómo contar mi historia.</li>
+                        <li><strong>Juicio estético:</strong> elegir cada pixel, transición y tipografía.</li>
+                        <li><strong>Empatía técnica:</strong> asegurar que funcione para todos, en cualquier
+                            dispositivo.</li>
+                        <li><strong>Iteración consciente:</strong> probar, ajustar, eliminar, refinar.</li>
+                    </ul>
+                    <p>La IA fue una herramienta —como Figma o VS Code—, pero la visión, el criterio y la ejecución
+                        final fueron 100% humanos.</p>
+                </div>
+            </div>
+        </section>
+
+
         <!-- Section 5: Projects -->
         <section id="projects" class="section fade-in">
             <h2>Proyectos</h2>
