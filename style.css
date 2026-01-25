@@ -737,3 +737,75 @@ footer p {
 .case-study-block .exp-details {
     margin-top: 0.5rem;
 }
+/* Certifications Section */
+.cert-categories {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.cert-category-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    border-left: 4px solid var(--text-primary); /* Visual accent */
+    padding-left: 1rem;
+    line-height: 1.2;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.cert-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.cert-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    border-color: var(--text-primary);
+}
+
+.cert-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    background-color: var(--hover-bg); /* Placeholder color if image missing */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cert-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.cert-info h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.cert-issuer {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    background-color: var(--hover-bg);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    width: fit-content;
+}
