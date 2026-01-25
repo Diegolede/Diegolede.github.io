@@ -1,19 +1,20 @@
+/* CSS Variables */
 :root {
-    --bg-color: #f9f9f9;
-    /* Softer, subtle white */
-    --text-primary: #111111;
-    --text-secondary: #555555;
-    --accent-color: #000000;
-    --border-color: #e5e5e5;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9f9f9;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --border-color: #e0e0e0;
     --hover-bg: #f5f5f5;
-    --font-main: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+    --shadow: rgba(0, 0, 0, 0.05);
+    --font-main: 'Commit Mono', monospace;
+    --accent-color: #000000;
     --spacing-unit: 1rem;
-    --spacing-unit: 1rem;
-    --max-width: 1100px;
-    /* Standard wide desktop width */
-    --radius: 18px;
+    --max-width: 1200px;
+    --radius: 0px;
 }
 
+/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -21,12 +22,13 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: #ffffff;
     color: var(--text-primary);
     font-family: var(--font-main);
-    line-height: 1.6;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    font-size: 16px;
+    font-size: 13px;
+    letter-spacing: -0.03em;
 }
 
 .container {
@@ -44,23 +46,26 @@ h1 {
 
 h2 {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.01em;
-    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    border-bottom: 2px dashed var(--border-color);
     padding-bottom: 0.5rem;
 }
 
 h3 {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
 }
 
 p {
     color: var(--text-secondary);
     margin-bottom: 1rem;
     line-height: 1.7;
+    letter-spacing: -0.02em;
 }
 
 a {
@@ -92,12 +97,12 @@ a:hover {
 }
 
 .section {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 /* Profile Section */
 .section-profile {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     padding-top: 2rem;
 }
 
@@ -105,19 +110,24 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    background: white;
+    background: var(--bg-primary);
     padding: 2.5rem;
     /* Increased padding for the main profile card */
-    border-radius: 10px;
+    border-radius: 0;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     /* Subtle shadow initially */
     transition: var(--transition);
 }
 
-.profile-card:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    border-color: var(--text-primary);
+/* Hover effect only for GitHub Profile and About Me cards (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+
+    #profile .profile-card:hover,
+    #about>.profile-card:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        border-color: var(--text-primary);
+    }
 }
 
 .profile-header {
@@ -207,7 +217,7 @@ a:hover {
     align-items: center;
     gap: 0.5rem;
     padding: 0.7rem 1rem;
-    border-radius: 10px;
+    border-radius: 0;
     font-weight: 500;
     font-size: 0.9rem;
     cursor: pointer;
@@ -228,7 +238,7 @@ a:hover {
 }
 
 .btn-secondary {
-    background-color: white;
+    background-color: var(--bg-primary);
     color: var(--text-primary);
     border-color: var(--border-color);
 }
@@ -241,11 +251,16 @@ a:hover {
 
 
 /* About Section */
+.about-intro-container p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
 .about-intro em {
     font-style: normal;
     background: linear-gradient(120deg, #e0e0e0 0%, #f5f5f5 100%);
     padding: 0 4px;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .about-grid {
@@ -262,10 +277,10 @@ a:hover {
 }
 
 .about-card {
-    background: white;
+    background: var(--bg-primary);
     /* Changed from var(--hover-bg) */
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 0;
     transition: var(--transition);
     border: 1px solid var(--border-color);
     /* Changed from transparent */
@@ -300,10 +315,10 @@ a:hover {
 }
 
 .exp-card {
-    background: white;
+    background: var(--bg-primary);
     /* Changed from var(--hover-bg) */
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 0;
     transition: var(--transition);
     border: 1px solid var(--border-color);
     /* Changed from transparent */
@@ -329,10 +344,10 @@ a:hover {
     font-size: 0.8rem;
     color: var(--text-secondary);
     font-feature-settings: "tnum";
-    background: white;
+    background: var(--bg-primary);
     width: fit-content;
     padding: 0.2rem 0.6rem;
-    border-radius: 50px;
+    border-radius: 0;
     border: 1px solid var(--border-color);
 }
 
@@ -390,10 +405,10 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: white;
+    background: var(--bg-primary);
     border: 1px solid var(--border-color);
     padding: 0.6rem 1rem;
-    border-radius: 10px;
+    border-radius: 0;
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--text-secondary);
@@ -451,7 +466,7 @@ a:hover {
 
 .project-card {
     border: 1px solid var(--border-color);
-    border-radius: 10px;
+    border-radius: 0;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -481,23 +496,14 @@ a:hover {
 .project-desc {
     font-size: 0.9rem;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     flex-grow: 1;
 }
 
-.project-lang {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-}
-
-.lang-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #ddd;
+.project-btn {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
 }
 
 /* Skeletons */
@@ -508,21 +514,21 @@ a:hover {
 .skeleton-text {
     background-color: var(--hover-bg);
     color: transparent !important;
-    border-radius: 4px;
+    border-radius: 0;
     user-select: none;
 }
 
 .project-skeleton {
     height: 150px;
     background-color: var(--hover-bg);
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 /* Footer Card Section */
 .footer-card {
-    background: white;
+    background: var(--bg-primary);
     padding: 0;
-    border-radius: 10px;
+    border-radius: 0;
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
@@ -544,7 +550,7 @@ a:hover {
     max-height: 290px;
     height: auto;
     width: auto;
-    border-radius: 10px;
+    border-radius: 0;
     object-fit: cover;
     display: block;
     margin-bottom: -15px;
@@ -554,7 +560,6 @@ a:hover {
 .back-to-top-container {
     display: flex;
     justify-content: center;
-    margin: 2rem 0;
 }
 
 .back-to-top-btn {
@@ -562,11 +567,11 @@ a:hover {
     align-items: center;
     gap: 0.5rem;
     padding: 0.7rem 1rem;
-    border-radius: 10px;
+    border-radius: 0;
     font-weight: 500;
     font-size: 0.9rem;
     cursor: pointer;
-    background-color: white;
+    background-color: var(--bg-primary);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
     transition: all 0.2s ease;
@@ -629,6 +634,12 @@ footer p {
 
 /* Case Study Section */
 /* Case Study Section */
+.case-study-objective {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
 .case-study-trigger {
     display: inline-flex;
     /* Match .btn */
@@ -637,7 +648,7 @@ footer p {
     /* Match .btn */
     padding: 0.7rem 1rem;
     /* Match .btn */
-    border-radius: 10px;
+    border-radius: 0;
     /* Match .btn */
     font-weight: 500;
     /* Match .btn */
@@ -646,17 +657,15 @@ footer p {
     cursor: pointer;
     user-select: none;
     width: fit-content;
-    margin: 1.5rem 0;
+    margin: 0.5rem 0;
     /* Align left (remove auto), add vertical spacing */
 
     /* Mix of btn-secondary styles */
-    background-color: white;
+    background-color: var(--bg-primary);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
     transition: all 0.2s ease;
-    /* Match .btn */
-
-    /* Fix for animation clipping */
+    /* Reduced vertical spacing */
     position: relative;
     z-index: 5;
     will-change: transform;
@@ -720,7 +729,7 @@ footer p {
 .code-block {
     background-color: var(--hover-bg);
     padding: 1.5rem;
-    border-radius: 10px;
+    border-radius: 0;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.85rem;
     overflow-x: auto;
@@ -737,6 +746,57 @@ footer p {
 .case-study-block .exp-details {
     margin-top: 0.5rem;
 }
+
+/* Collapsible styles (for generic collapsible sections) */
+.collapsible-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+    width: fit-content;
+    margin: 1.5rem 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 5;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.collapsible-header:hover {
+    background-color: var(--hover-bg);
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+    box-shadow: none;
+}
+
+.collapsible-header.active .chevron-icon {
+    transform: rotate(180deg);
+}
+
+.collapsible-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out, opacity 0.4s ease-out;
+}
+
+.collapsible-content.open {
+    opacity: 1;
+    margin-top: 1rem;
+    transition: max-height 0.8s ease-in, opacity 0.4s ease-in;
+}
+
 /* Certifications Section */
 .cert-categories {
     margin-top: 3rem;
@@ -750,7 +810,8 @@ footer p {
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
-    border-left: 4px solid var(--text-primary); /* Visual accent */
+    border-left: 4px solid var(--text-primary);
+    /* Visual accent */
     padding-left: 1rem;
     line-height: 1.2;
 }
@@ -762,9 +823,9 @@ footer p {
 }
 
 .cert-card {
-    background: white;
+    background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    border-radius: 10px;
+    border-radius: 0;
     overflow: hidden;
     transition: var(--transition);
     display: flex;
@@ -781,7 +842,8 @@ footer p {
     width: 100%;
     height: 140px;
     object-fit: cover;
-    background-color: var(--hover-bg); /* Placeholder color if image missing */
+    background-color: var(--hover-bg);
+    /* Placeholder color if image missing */
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -806,6 +868,35 @@ footer p {
     color: var(--text-secondary);
     background-color: var(--hover-bg);
     padding: 0.2rem 0.5rem;
-    border-radius: 4px;
+    border-radius: 0;
     width: fit-content;
+}
+
+/* ========================================
+   DISABLE ALL HOVER EFFECTS ON MOBILE/TOUCH DEVICES
+   ======================================== */
+@media (hover: none) {
+
+    a:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .about-card:hover,
+    .exp-card:hover,
+    .stack-item:hover,
+    .project-card:hover,
+    .footer-card:hover,
+    .back-to-top-btn:hover,
+    .back-to-top-btn:hover svg,
+    .case-study-trigger:hover,
+    .collapsible-header:hover,
+    .cert-card:hover,
+    #profile .profile-card:hover,
+    #about>.profile-card:hover {
+        /* Reset all hover effects to default state */
+        box-shadow: inherit !important;
+        border-color: inherit !important;
+        background-color: inherit !important;
+        transform: none !important;
+        color: inherit !important;
+    }
 }

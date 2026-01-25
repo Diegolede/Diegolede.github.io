@@ -118,9 +118,6 @@ function createProjectCard(repo) {
     article.className = "project-card";
 
     const description = repo.description || "Proyecto técnico";
-    const language = repo.language || "Código";
-    // Mapping language to color (simple version)
-    const langColor = getLanguageColor(language);
 
     article.innerHTML = `
         <div class="project-top">
@@ -132,20 +129,8 @@ function createProjectCard(repo) {
             </a>
         </div>
         <p class="project-desc">${description}</p>
-        <div class="project-lang">
-            <span class="lang-dot" style="background-color: ${langColor}"></span>
-            <span>${language}</span>
-        </div>
+        <a href="${repo.html_url}" target="_blank" class="btn btn-secondary project-btn">Ver proyecto</a>
     `;
-
-    // Make the whole card clickable
-    article.style.cursor = "pointer";
-    article.onclick = (e) => {
-        // Prevent if clicked on the SVG link specifically to avoid double open (though anchor handles it)
-        if (!e.target.closest('a')) {
-            window.open(repo.html_url, '_blank');
-        }
-    };
 
     return article;
 }
@@ -153,18 +138,4 @@ function createProjectCard(repo) {
 function updateElement(id, text) {
     const el = document.getElementById(id);
     if (el) el.textContent = text;
-}
-
-function getLanguageColor(lang) {
-    const colors = {
-        "Python": "#3572A5",
-        "JavaScript": "#F7DF1E",
-        "HTML": "#E34F26",
-        "CSS": "#563D7C",
-        "TypeScript": "#2b7489",
-        "Java": "#b07219",
-        "R": "#198CE7",
-        "Shell": "#89e051"
-    };
-    return colors[lang] || "#888888";
 }
